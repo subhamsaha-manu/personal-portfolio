@@ -16,6 +16,12 @@ public class TestController {
 
     @Autowired
     private UserService userService;
+
+    @GetMapping(value = "/")
+    public String first(){
+        return "Hello World";
+    }
+
     @GetMapping(value = "/getName")
     public String getName(){
         String email = "subhamsaha90@gmail.com";
