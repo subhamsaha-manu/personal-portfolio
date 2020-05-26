@@ -2,19 +2,46 @@ package com.personal.portfolio.model;
 
 
 import lombok.Data;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
 
-import javax.persistence.Id;
 
 @Data
 @Document(collection = "User")
-public class User {
+public class User extends AbstractDocument{
 
-@Id
-private String id;
 
-private String name;
+@Field(name = "name")
+private String fullName;
 
-private String email;
+@Field("email")
+private List<EmailAddress> emailAddresses;
+
+@Field
+private String linkedInId;
+
+@Field
+private Long mobileNumber;
+
+@Field
+private String careerObjective;
+
+@Field("experience")
+private List<Experience> workExperience;
+
+@Field
+private List<Education> educationQualification;
+
+@Field("interests")
+private List<Interests> areasOfInterest;
+
+@Field("skills")
+private List<Skills> skills;
+
 }
