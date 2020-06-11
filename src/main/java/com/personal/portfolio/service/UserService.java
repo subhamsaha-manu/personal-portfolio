@@ -1,12 +1,14 @@
 package com.personal.portfolio.service;
 
-import com.personal.portfolio.dto.UserDTO;
+import com.personal.portfolio.dto.model.UserDTO;
 
 import java.util.List;
 
 public interface UserService {
 
-   // UserDto findByEmail(String email);
+   UserDTO findByEmail(String email);
 
     List<UserDTO> findAll();
+
+
 }

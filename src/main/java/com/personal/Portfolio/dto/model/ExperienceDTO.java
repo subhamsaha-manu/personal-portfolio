@@ -1,9 +1,11 @@
-package com.personal.portfolio.dto;
+package com.personal.portfolio.dto.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@NoArgsConstructor
 @Data
 public class ExperienceDTO {
 

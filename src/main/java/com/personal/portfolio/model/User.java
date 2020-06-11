@@ -2,16 +2,13 @@ package com.personal.portfolio.model;
 
 
 import lombok.Data;
-import org.springframework.data.annotation.Transient;
-import org.springframework.data.mongodb.core.mapping.DBRef;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
-
+@NoArgsConstructor
 @Data
 @Document(collection = "User")
 public class User extends AbstractDocument{

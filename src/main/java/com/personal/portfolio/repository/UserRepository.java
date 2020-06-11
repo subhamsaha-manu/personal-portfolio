@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface UserRepository extends CommonInterface<User,Long> {
 
-   //User findByEmail(String email);
+   User findByEmailAddresses_value(String email);
 }
