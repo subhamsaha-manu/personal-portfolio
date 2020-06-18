@@ -10,5 +10,6 @@ public interface UserService {
 
     List<UserDTO> findAll();
 
+    void increaseLikeCounter(int id);
 
 }

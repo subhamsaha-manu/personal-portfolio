@@ -49,6 +49,8 @@ public interface UserMapper {
 
     SkillsDTO skillsToSkillsDTO(Skills skills);
 
+    PhotoDTO photoToPhotoDTO(Photo photos);
+
     @Named("firstNameExtractor")
     public static String getFirstName(String name){
         String[] nameParts = name.split(" ");

@@ -5,9 +5,10 @@ import com.personal.portfolio.exception.EntityType;
 import com.personal.portfolio.exception.ExceptionType;
 import com.personal.portfolio.exception.PortfolioException;
 import com.personal.portfolio.mapper.UserMapper;
+import com.personal.portfolio.model.Photo;
 import com.personal.portfolio.model.User;
 import com.personal.portfolio.repository.UserRepository;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Slf4j
+@Log4j2
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -66,6 +67,20 @@ public class UserServiceImpl implements UserService {
         return userDTO;
     }
 
+    @Override
+    public void increaseLikeCounter(int id) {
+        /*User user = mongoTemplate.findOne(
+                Query.query(Criteria.where("email.value").is(email)), User.class);
+
+        user.setName("Jim");
+        Update update = new Update();
+        mongoTemplate.;
+        update.inc()
+        userRepository.save(user);*/
+        Optional<Photo> photo = Optional.ofNullable(userRepository.findByPhotos_id(id));
+        if(photo.isPresent())
+            photo.get().setLikeCounter(photo.get().getLikeCounter()+1);
+    }
 
     public RuntimeException exceptions(EntityType entityType,ExceptionType exceptionType,String...args){
         return PortfolioException.throwsException(entityType,exceptionType,args);

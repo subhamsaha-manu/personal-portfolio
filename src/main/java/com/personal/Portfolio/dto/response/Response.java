@@ -33,6 +33,12 @@ public class Response<T> {
         return response;
     }
 
+    public static <T> Response<T> error() {
+        Response<T> response = new Response<>();
+        response.setStatus(Status.ERROR);
+        return response;
+    }
+
     public static <T> Response<T> duplicateEntity() {
         Response<T> response = new Response<>();
         response.setStatus(Status.DUPLICATE_ENTITY);
@@ -55,7 +61,7 @@ public class Response<T> {
 
 
     public enum Status {
-        OK, NOT_FOUND, DUPLICATE_ENTITY
+        OK, NOT_FOUND, DUPLICATE_ENTITY,ERROR
     }
 
 }

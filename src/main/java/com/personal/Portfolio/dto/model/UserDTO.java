@@ -32,4 +32,6 @@ public class UserDTO {
 
     private List<SkillsDTO> skills;
 
+    private List<PhotoDTO> photos;
+
 }

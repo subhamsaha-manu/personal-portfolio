@@ -33,6 +33,8 @@ public class PortfolioException extends Exception {
             return new EntityNotFoundException(format(exceptionTemplate,args));
         }else if(ExceptionType.DUPLICATE_ENTITY.equals(exceptionType)){
             return new DuplicateEntityException(format(exceptionTemplate,args));
+        }else if(ExceptionType.MAIL_EXCEPTION.equals(exceptionType)) {
+            return new MailSendingFailed(format(exceptionTemplate, args));
         }
         return new RuntimeException(format(exceptionTemplate,args));
     }
@@ -60,5 +62,11 @@ public class PortfolioException extends Exception {
         public DuplicateEntityException(String message) {
             super(message);
         }
+    }
+
+    public static class MailSendingFailed extends RuntimeException {
+        public MailSendingFailed(String message) {
+                super(message);
+            }
     }
 }

@@ -41,4 +41,7 @@ private List<Interests> areasOfInterest;
 @Field("skills")
 private List<Skills> skills;
 
+@Field("photos")
+private List<Photo> photos;
+
 }
