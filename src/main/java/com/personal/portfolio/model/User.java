@@ -21,6 +21,9 @@ private String fullName;
 private List<EmailAddress> emailAddresses;
 
 @Field
+private String profilePhotoUrl;
+
+@Field
 private String linkedInId;
 
 @Field

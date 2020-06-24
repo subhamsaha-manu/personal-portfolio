@@ -18,6 +18,8 @@ public class UserDTO {
 
     private List<EmailAddressDTO> emailAddresses;
 
+    private String profilePhotoUrl;
+
     private String linkedInId;
 
     private Long mobileNumber;
