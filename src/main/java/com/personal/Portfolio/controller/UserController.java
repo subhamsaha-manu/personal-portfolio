@@ -13,6 +13,17 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.Optional;
 
+/**
+ * <h1>User REST controller!</h1>
+ * REST Controller which is the entry point to the application.
+ *  1.It fetches complete User Details using the email id sent to it as parameter.
+ *   And sends the response wrapped in a Response Object.
+ *  2.It also calls the Email Service to send mail, with the incoming user details
+ * @author  Subham Saha
+ * @version 1.0
+ * @since   2024-07-03
+ */
+
 @Log4j2
 @RestController
 @RequestMapping(path = "user")
@@ -24,6 +35,11 @@ public class UserController {
     @Autowired
     private EmailService emailService;
 
+    /**
+     * API which fetches complete User details from the database via the Service
+     * @param email - the details of the particular user.
+     * @return Response Object which wraps the status as well as the User details
+     */
     @GetMapping(value = "/getUser")
     public Response getUserByEmail(@RequestParam String email ){
         //String email = "subhamsaha90@gmail.com";
@@ -41,6 +57,12 @@ public class UserController {
                         .setErrors(String.format("No user found with - '%s'", email));
     }
 
+    /**
+     * Presently unused. Should be used to handle if a particular picture is liked.
+     * @param id The id of the image.
+     * @return Status wrapped in Response depending upon whether the operation was carried
+     * out successfully.
+     */
     @PostMapping("/increaseLikeCounter/{id}")
     public Response increaseLikeCounter(@PathVariable("id") int id) {
 
@@ -54,6 +76,13 @@ public class UserController {
     }
 
 
+    /**
+     * Used to send Email to the user(website owner) with the details sent from the
+     * UI App via the contact form.
+     * @param mailObject The user details fetched from the contact form.
+     * @return Status wrapped in Response depending upon whether the operation was carried
+     *         out successfully.
+     */
     @PostMapping("/sendEmail")
     public Response sendEmail(@RequestBody @Valid MailObject mailObject) {
 

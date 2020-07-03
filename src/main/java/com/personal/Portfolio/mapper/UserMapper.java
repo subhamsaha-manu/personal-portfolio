@@ -12,6 +12,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Optional;
 
+/**
+ * <h1>Mapper Interface!</h1>
+ * Helps to Map a Model object into a DTO object with the necessary modifications
+ * and vice versa.
+ * @author  Subham Saha
+ * @version 1.0
+ * @since   2024-07-03
+ */
+
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
@@ -29,6 +38,12 @@ public interface UserMapper {
 
     //List<EmailAddressDTO> emailAddressToEmailAddressDTO(List<EmailAddress> emailAddress);
 
+    /**
+     * Modifies the date values in the experience embedded document to a specified
+     * format.     *
+     * @param experience
+     * @return
+     */
     @Mappings({
       @Mapping(target = "joiningDate", source = "joiningDate",
               qualifiedByName = "dateFormatter"),

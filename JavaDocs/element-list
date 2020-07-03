@@ -1,0 +1,12 @@
+com.personal.portfolio
+com.personal.portfolio.config
+com.personal.portfolio.controller
+com.personal.portfolio.dto.model
+com.personal.portfolio.dto.request
+com.personal.portfolio.dto.response
+com.personal.portfolio.exception
+com.personal.portfolio.mapper
+com.personal.portfolio.model
+com.personal.portfolio.repository
+com.personal.portfolio.service
+com.personal.portfolio.util

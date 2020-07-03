@@ -9,8 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
+
+/**
+ * <h1>Mail sending service implementation!</h1>
+ * @author  Subham Saha
+ * @version 1.0
+ * @since   2024-07-03
+ */
+
 
 @Log4j2
 @Service("EmailService")

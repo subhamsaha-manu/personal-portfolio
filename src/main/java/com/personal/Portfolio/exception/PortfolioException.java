@@ -9,6 +9,15 @@ import java.text.MessageFormat;
 import java.util.Optional;
 
 
+/**
+ * <h1>Custom Exception class!</h1>
+ * Application wide exception handling performed with the help of this class.
+ * @author  Subham Saha
+ * @version 1.0
+ * @since   2024-07-03
+ */
+
+
 @Component
 public class PortfolioException extends Exception {
 

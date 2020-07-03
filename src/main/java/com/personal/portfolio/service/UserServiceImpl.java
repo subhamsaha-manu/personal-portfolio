@@ -16,6 +16,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * <h1>User service implementation</h1>
+ * @author  Subham Saha
+ * @version 1.0
+ * @since   2024-07-03
+ */
+
+
 @Log4j2
 @Service
 public class UserServiceImpl implements UserService {
@@ -40,6 +48,14 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    /**
+     * method to find a particular User Document from the User Collection
+     * The UserRepository returns the User Document mapped in User Model,
+     * which is further parsed and mapped into UserDTO object,
+     * which is sent to the application layer.
+     * @param email the email address of the required user
+     * @return the UserDTO object
+     */
     @Override
     public UserDTO findByEmail(String email){
         //This method also works, but be have used native query method approach.

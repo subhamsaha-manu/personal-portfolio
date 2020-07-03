@@ -8,6 +8,16 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
+/**
+ * <h1>A User Model!</h1>
+ * Holds all information about a particular User.
+ * It follows the embedded document structure.
+ * @author  Subham Saha
+ * @version 1.0
+ * @since   2024-07-03
+ */
+
+
 @NoArgsConstructor
 @Data
 @Document(collection = "User")

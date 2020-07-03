@@ -2,9 +2,14 @@ package com.personal.portfolio.dto.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.Binary;
 
-import java.util.List;
+/**
+ * <h1>Photo Data Transfer Object!</h1>
+ * @author  Subham Saha
+ * @version 1.0
+ * @since   2024-07-03
+ */
+
 
 @NoArgsConstructor
 @Data

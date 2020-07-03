@@ -8,6 +8,15 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * <h1>Education Model!</h1>
+ * Holds information about the User's Education details.
+ * A list of this object would be embedded in a User's document
+ * @author  Subham Saha
+ * @version 1.0
+ * @since   2024-07-03
+ */
+
 @NoArgsConstructor
 @Data
 public class Education  {
